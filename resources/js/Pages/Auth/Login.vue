@@ -6,7 +6,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
-
+import LoginLayout from '../Layout/GuestLayout.vue'
 defineProps({
     canResetPassword: Boolean,
     status: String,
@@ -26,14 +26,14 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
+    <LoginLayout>
         <Head title="Log in" />
 
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
         </div>
 
-        <form @submit.prevent="submit">
+        <form class="w-1/2 mt-6 mx-auto" @submit.prevent="submit">
             <div>
                 <InputLabel for="email" value="Email" />
                 <TextInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />
@@ -63,5 +63,5 @@ const submit = () => {
                 </PrimaryButton>
             </div>
         </form>
-    </GuestLayout>
+    </LoginLayout>
 </template>

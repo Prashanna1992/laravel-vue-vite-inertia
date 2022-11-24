@@ -1,10 +1,10 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+import LoginLayout from '../Layout/GuestLayout.vue'
 
 const form = useForm({
     name: '',
@@ -22,10 +22,10 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
+    <LoginLayout>
         <Head title="Register" />
 
-        <form @submit.prevent="submit">
+        <form class="w-1/2 mx-auto mt-7" @submit.prevent="submit">
             <div>
                 <InputLabel for="name" value="Name" />
                 <TextInput id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />
@@ -60,5 +60,5 @@ const submit = () => {
                 </PrimaryButton>
             </div>
         </form>
-    </GuestLayout>
+    </LoginLayout>
 </template>
