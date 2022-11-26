@@ -64,7 +64,7 @@ export default {
         Link
     },
     props: {
-        posts: Object
+        posts: Object,
     }
 }
 </script>

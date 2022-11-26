@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Http\Request;
+use App\Http\Resources\PostResource;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
-use App\Http\Resources\PostResource;
 
 class PostController extends Controller
 {
@@ -37,17 +38,8 @@ class PostController extends Controller
      * @param  \App\Http\Requests\StorePostRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePostRequest $request)
+    public function store(Request $request)
     {
-        $rules = [
-            'title' => ['required'],
-        ];
-        $messages = [
-            'title.required' => 'Enter a title!'
-        ];
-
-        // $request->validate($rules, $messages);
-
         $new_post = Post::create([
             'title' => $request->title,
             'description' => $request->description,

@@ -24,7 +24,16 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+                [
+                    'title' => ['required'],
+                    'description' => ['required'],
+                    'created_by' => ['required']
+                ],
+                [
+                    'title.required' => 'Enter a title!',
+                    'description.required' => 'Tell us something about your post!',
+                    'created_by.required' => 'Author name is required!'
+                ]
         ];
     }
 }
