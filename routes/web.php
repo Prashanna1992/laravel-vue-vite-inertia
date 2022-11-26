@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/post', [PostController::class, 'index'])->name('post.index');
+Route::resource('/post', PostController::class);
+
 
 Route::inertia('about', 'About/Index')->name('about.index');

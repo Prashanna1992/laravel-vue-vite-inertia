@@ -28,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Post/Create');
     }
 
     /**
@@ -39,7 +39,23 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $rules = [
+            'title' => ['required'],
+        ];
+        $messages = [
+            'title.required' => 'Enter a title!'
+        ];
+
+        // $request->validate($rules, $messages);
+
+        $new_post = Post::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'created_by' => $request->created_by
+        ]);
+
+        return redirect()->route('post.index');
+
     }
 
     /**

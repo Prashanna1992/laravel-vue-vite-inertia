@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- Navbar -->
-        <nav class="bg-gray-300 border-black-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
+        <nav class="bg-tahiti border-black-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
                 <Link :href="route('home')" class="flex items-center">
                     <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
@@ -15,6 +15,9 @@
                 <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li class="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                         <Link :href="route('post.index')" :class="{ 'active': $page.component === 'Users/Index' }" >Posts</Link>
+                    </li>
+                    <li class="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                        <Link :href="route('post.create')" :class="{ 'active': $page.component === 'Users/Index' }" >New Post</Link>
                     </li>
                     <li class="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                         <Link :href="route('about.index')" :class="{ 'active': $page.component === 'Users/Index' }">About</Link>

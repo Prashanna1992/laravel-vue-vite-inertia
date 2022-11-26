@@ -2,8 +2,12 @@
     <AppLayout>
         <Head title="Posts"/>
         <div class="w-80 mx-auto">
-
             <div class="w-full mt-4 text-sm text-left text-gray-500 dark:text-gray-400">
+                <div class="w-full pt-3 flex justify-items-end">
+                    <Link :href="route('post.create')" class="bg-corallite hover:bg-creamypeach text-white font-bold py-2 px-4 rounded-full">
+                        Add New Post
+                    </Link>
+                </div>
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead>
                         <th>
@@ -52,10 +56,12 @@
 <script>
 import AppLayout from '../Layout/App.vue'
 import { Head } from '@inertiajs/inertia-vue3';
+import { Link } from '@inertiajs/inertia-vue3';
 export default {
     components:{
         AppLayout,
-        Head
+        Head,
+        Link
     },
     props: {
         posts: Object
