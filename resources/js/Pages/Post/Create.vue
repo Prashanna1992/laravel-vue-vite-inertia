@@ -11,7 +11,7 @@
                         </label>
                         <input v-model="form.title"
                             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                            id="grid-first-name" type="text" placeholder="New Post Title">
+                            name="title" id="grid-first-name" type="text" placeholder="New Post Title">
                         <p v-if="errors.title" class="text-red text-xs italic">
                             {{errors.title}}
                         </p>
@@ -22,7 +22,7 @@
                         </label>
                         <input v-model="form.created_by"
                             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="grid-last-name" type="text" placeholder="John Doe">
+                            name="created_by" id="grid-last-name" type="text" placeholder="John Doe">
                         <p v-if="errors.created_by" class="text-red text-xs italic">
                             {{errors.created_by}}
                         </p>
@@ -34,6 +34,7 @@
                             Description
                         </label>
                         <textarea v-model="form.description"
+                            name="description"
                             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             id="grid-password" type="password" placeholder="Tell us more about your post..."></textarea>
                         <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
@@ -43,7 +44,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="bg-bermuda hover:bg-bubble-gum text-white font-bold py-2 px-4 rounded-full">
+                <button type="submit" :disable="form.processing" class="bg-bermuda hover:bg-bubble-gum text-white font-bold py-2 px-4 rounded-full">
                     Create New Post
                 </button>
             </form>
